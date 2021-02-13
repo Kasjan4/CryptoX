@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Raleway:wght@400;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1652f0;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+
+
+
+
+
+/* UNIVERSAL */
+
+
+
+.container-global {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* background-color: red; */
+}
+
+.container-crypto {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  color: black;
+  background-color: transparent;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
+  /* background-color: red; */
+}
+
+#logo {
+  color: white;
+  margin-bottom: 1.2rem;
+  font-size: 1.7rem;
+}
+
+.loader {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+}
+
+
+
+.spinner {
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  z-index: 999;
+}
+
+/* HOME */
+
+.home-info {
+  position: absolute;
+  top: 20%;
+  left: 4rem;
+  text-align: left;
+  font-weight: 100;
+}
+
+.home-info p {
+  font-size: 1.2rem;
+}
+
+.home-info p strong {
+  font-size: 1.4rem;
+}
+
+#mic {
+  font-size: 3rem;
+  color: rgb(255, 255, 255, 0.7);
+  background: none;
+  border: none;
+  transition: ease .3s;
+}
+
+#mic:hover {
+  font-size: 3rem;
+  color: #1e77eb;
+  background: none;
+  border: none;
+}
+
+#mic:focus {
+  font-size: 3rem;
+  color: red;
+  background: none;
+  border: none;
+
+}
+
+.transcript,
+.input-text {
+  font-size: 3rem;
+  text-align: left;
+  position: absolute;
+  top: 30%;
+  right: 5rem;
+  width: 25rem;
+  overflow-x: scroll;
+}
+
+
+.success,
+.duplicate-found,
+.no-country {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 100;
+  position: absolute;
+  top: 45%;
+  right: 15rem;
+
+}
+
+
+
+.or {
+  color: rgb(255, 255, 255, 0.7);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.svg-inline--fa .fa-microphone .fa-w-11 .fa-3x {
+  color: red !important;
+}
+
+/* NAVBAR */
+
+nav {
+  z-index: 999 !important;
+}
+
+.navbar-nav {
+  margin-top: 1.5rem !important;
+
+}
+
+.nav-logo,
+.nav-logo:hover,
+.nav-logo:focus {
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}
+
+
+.navbar {
+  background-color: #1652f0 !important;
+}
+
+.nav-item a {
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: ease .3s;
+}
+
+.nav-item a:hover {
+  font-size: 1.1rem !important;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  position: absolute !important;
+  left: 1rem;
+}
+
+.logout-screen {
+  position: absolute;
+  top: 1rem;
+  left: 46%;
+
+}
+
+.logout-screen p {
+  color: rgb(255, 255, 255, 0.8);
+  text-align: center;
+  font-weight: 100;
+
+}
+
+/* FORMS */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem 0 2.5rem 0;
+  width: 100vw;
+}
+
+input {
+  font-size: 1.2rem !important;
+  border-radius: 1rem !important;
+  border: none !important;
+  font-weight: 500 !important;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: none !important;
+}
+
+input::placeholder {
+  color: rgb(165, 165, 165) !important;
+}
+
+.form-control {
+  color: black !important;
+  background-color: transparent !important;
+  border: 1px solid !important;
+  border-color: rgb(228, 228, 228) !important;
+  width: 90vw !important;
+}
+
+
+.form-control:hover {
+  border-color: white !important;
+  background-color: rgb(30, 119, 235);
+}
+
+.form-control:focus {
+  border-color: #1652f0 !important;
+}
+
+.btn-secondary {
+  margin-top: 1rem;
+  /* border: 1px solid rgb(255, 255, 255, 0.5); */
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  color: white !important;
+  background-color: #1652f0;
+  transition: .5s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  /* border: 1px solid rgba(11, 92, 197, 0); */
+  background-color: rgba(11, 92, 197, 0.5);
+}
+
+.btn-secondary:focus {
+  /* border: 1px solid rgb(255, 255, 255, 0.5); */
+  background-color: #1652f0;
+}
+
+.signin-query {
+  color: white;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.signin-query-bold {
+  font-weight: 600;
+}
+
+.signup-query {
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255, 0.8);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.signup-query a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+
+
+/* ACCOUNT */
+
+
+
+
+
+.profile-picture {
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+}
+
+.username {
+  color: black;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.delete-user {
+  background-color: rgb(238, 53, 53);
+  margin-top: 5rem;
+}
+
+.delete-user:hover {
+  background-color: rgb(255, 0, 0, 0.8);
+}
+
+
+.watchlist-heading {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.watchlist-heading-query {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+
+
+/* SIGNIN */
+
+
+
+
+
+/* SIGNUP */
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 20vw;
+  background-color: red;
+  text-align: center;
+}
+
+#error {
+  font-size: 1.2rem;
+  color: white;
+}
+
+
+/* UPDATE ACCOUNT */
+
+
+.btn-update {
+  width: 100%;
+}
+
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem 0 2.5rem 0;
+  margin-top: 5rem;
+}
+
+
+
+.update-picture {
+  width: 90vw;
+  margin-bottom: 1rem;
+}
+
+.profile-picture-update {
+  border-radius: 50%;
+  width: 25vw;
+  height: 25vw;
+  height: width;
+  margin: .5rem .25rem .5rem .25rem;
+}
+
+.profile-picture-update:hover {
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+
+.profile-picture-update-active {
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+  border: 5px solid #1e77eb;
+}
+
+
+
+/* CRYPTO */
+
+.container-coins {
+  background-color: white;
+}
+
+.coin-single {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 10vh;
+  margin: 1rem 0 1rem 0;
+}
+
+.coin-single:nth-of-type(1) {
+  margin-top: 1.5rem
+}
+
+.coin-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.coin-image {
+  max-width: 14vw;
+  max-height: 100%;
+}
+
+.coin-name {
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.coin-market {
+  margin-right: 1rem;
+  text-align: right;
+}
+
+.coin-price {
+  font-size: 1.1rem;
+}
+
+.coin-symbol {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.coin-change {
+  color: green;
+}
+
+.coin-change-red {
+  color: red;
+}
+
+.container-filter-coins {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  /* background-color: red; */
+}
+
+.filter-currency {
+  color: white;
+  font-size: 1rem;
+  flex: 1;
+  background-color: transparent;
+  border: 0;
+  margin: 0 .5rem 0 .5rem;
+}
+
+.btn-filter {
+  flex: 1 !important;
+  font-size: .6rem !important;
+  padding: .2rem !important;
+  margin: 0 !important;
+  border-radius: 1rem !important;
+  margin: 0 .5rem 0 .5rem !important;
+}
+
+
+
+/* COIN */
+
+.coin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 2.5rem 0 2.5rem 0;
+  border-radius: 1.5rem;
+  width: 100vw;
+}
+
+.coin-upper {
+  display: flex;
+  flex-direction: row;
+}
+
+.coin-upper-info {
+  margin-left: 2rem;
+}
+
+.coin-image-large {
+  margin-left: 1rem;
+  width: 30vw
+}
+
+.coin-heading {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.coin-heading span {
+  text-transform: uppercase;
+
+}
+
+.coin-lower {
+  height: 40vh;
+  overflow-y: scroll;
+}
+
+.coin-desc {
+  font-size: 1rem;
+  padding: 0rem 1.5rem 0rem 1.5rem;
+  word-break: break-all;
+}
+
+.coin-mid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #1652f0;
+}
+
+.coin-perc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* border-radius: 50%; */
+  width: 25vw;
+  height: 25vw;
+
+}
+
+.coin-perc-type {
+  font-size: 1.1rem;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.coin-perc-green {
+  font-size: 1.3rem;
+  color: green;
+}
+
+.coin-perc-red {
+  font-size: 1.3rem;
+  color: red;
+}
+
+.btn-dup {
+  background-color: red;
+}
+
+.btn-dup:focus {
+  background-color: red;
+}
