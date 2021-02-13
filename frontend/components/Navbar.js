@@ -26,7 +26,7 @@ const Navbar = (props) => {
 
     <div className="nav-logo">{logo} CryptoX</div>
 
-    <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+    <button className="navbar-toggler custom-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span className="navbar-toggler-icon"></span>
     </button>
 

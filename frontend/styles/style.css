@@ -157,6 +157,10 @@ nav {
   z-index: 999 !important;
 }
 
+.custom-toggler {
+  border-color: rgb(255, 255, 255, 0.7) !important;
+}
+
 .navbar-nav {
   margin-top: 1.5rem !important;
 
@@ -213,14 +217,14 @@ form {
   align-items: center;
   justify-content: center;
   background-color: white;
-  border-radius: 1.5rem;
+  /* border-radius: 1.5rem; */
   padding: 2.5rem 0 2.5rem 0;
   width: 100vw;
 }
 
 input {
   font-size: 1.2rem !important;
-  border-radius: 1rem !important;
+  border-radius: 0 !important;
   border: none !important;
   font-weight: 500 !important;
 }
@@ -245,7 +249,6 @@ input::placeholder {
 
 
 .form-control:hover {
-  border-color: white !important;
   background-color: rgb(30, 119, 235);
 }
 
@@ -255,8 +258,8 @@ input::placeholder {
 
 .btn-secondary {
   margin-top: 1rem;
-  /* border: 1px solid rgb(255, 255, 255, 0.5); */
-  border-radius: 1rem;
+  border: 0;
+  border-radius: 0;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.2rem;
@@ -268,8 +271,8 @@ input::placeholder {
 }
 
 .btn-secondary:hover {
-  /* border: 1px solid rgba(11, 92, 197, 0); */
-  background-color: rgba(11, 92, 197, 0.5);
+  border: 0;
+  background-color: #4d7bf1;
 }
 
 .btn-secondary:focus {
@@ -391,7 +394,7 @@ input::placeholder {
   align-items: center;
   width: 100vw;
   background-color: white;
-  border-radius: 1.5rem;
+  border-radius: 0;
   padding: 2.5rem 0 2.5rem 0;
   margin-top: 5rem;
 }
@@ -510,7 +513,7 @@ input::placeholder {
   font-size: .6rem !important;
   padding: .2rem !important;
   margin: 0 !important;
-  border-radius: 1rem !important;
+  border-radius: 0 !important;
   margin: 0 .5rem 0 .5rem !important;
 }
 
