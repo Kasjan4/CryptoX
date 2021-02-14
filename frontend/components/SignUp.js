@@ -80,10 +80,10 @@ const SignUp = (props) => {
 
   console.log(errors)
 
-  return <div className="container-global">
+  return <div className="container-global global-desk">
     <Fade>
 
-      <h1 className="signin-query" >Sign up for your personal <span className="signin-query-bold">Crypto</span> account</h1>
+      <h1 className="signin-query sq-desk" >Sign up for your personal <span className="signin-query-bold">Crypto</span> account</h1>
 
       <form onSubmit={handleSubmit}>
 

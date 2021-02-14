@@ -81,7 +81,7 @@ const Coin = (props) => {
 
 
 
-  return <div className="container-global">
+  return <div className="container-global crypto-desk">
 
 
     {!loaded ? <div className="loader"><ReactBootStrap.Spinner className="spinner" animation="grow" /></div> :
@@ -92,7 +92,7 @@ const Coin = (props) => {
           <img className="coin-image-large" src={coin.image.large} />
           <div className="coin-upper-info">
             <h1 className="coin-heading" >{coin.name} <span>({coin.symbol})</span></h1>
-            <p className="coin-date">{coin.genesis_date}</p>
+            <br />
             <a href={coin.links.homepage} target="_blank" rel='noreferrer'>{coin.links.homepage}</a>
           </div>
 
@@ -128,8 +128,8 @@ const Coin = (props) => {
         </div>
 
 
-      </div>
-    }
+      </div>}
+
 
 
   </div >

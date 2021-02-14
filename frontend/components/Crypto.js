@@ -91,8 +91,8 @@ const Crypto = (props) => {
 
           {crypto.map((coin, index) => {
 
-            return <Link to={`/crypto/${coin.id}`} key={index}>
-              <div className="coin-single" >
+            return <Link className="coin-single-container" to={`/crypto/${coin.id}`} key={index}>
+              <div className="coin-single coin-single-desk" >
 
                 <div className="coin-info">
                   <img className="coin-image" src={coin.image} />

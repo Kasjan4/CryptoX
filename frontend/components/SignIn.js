@@ -14,7 +14,7 @@ const SignIn = (props) => {
   const logo = <FontAwesomeIcon icon={faCoins} size="2x" />
 
   if (token) {
-    props.history.push('/add')
+    props.history.push('/crypto')
   }
 
 
@@ -61,7 +61,6 @@ const SignIn = (props) => {
 
       <div id="logo" >{logo}</div>
       <h1 className="signin-query" >Sign in to <span className="signin-query-bold">CryptoX</span><br /></h1>
-
 
 
       <form onSubmit={handleSubmit}>

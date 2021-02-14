@@ -73,12 +73,12 @@ const Account = (props) => {
           <h1 className={accountData.watchlist.length > 0 ? 'watchlist-heading' : 'watchlist-heading-query'} >{accountData.watchlist.length > 0 ? 'Watchlist' : 'Your watched crypto will appear here'}</h1>
 
 
-          <div className="container-coins">
+          <div className="container-coins account-coins-desk">
 
             {watchlist.map((coin, index) => {
 
               return <Link to={`/crypto/${coin.id}`} key={index}>
-                <div className="coin-single" >
+                <div className="coin-single coin-single-desk" >
 
                   <div className="coin-info">
                     <img className="coin-image" src={coin.image.large} />

@@ -34,18 +34,16 @@ body {
   width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
-  /* background-color: red; */
 }
 
 .container-crypto {
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   width: 100vw;
   color: black;
   background-color: transparent;
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
-  /* background-color: red; */
 }
 
 #logo {
@@ -157,14 +155,13 @@ nav {
   z-index: 999 !important;
 }
 
+
+
 .custom-toggler {
   border-color: rgb(255, 255, 255, 0.7) !important;
 }
 
-.navbar-nav {
-  margin-top: 1.5rem !important;
 
-}
 
 .nav-logo,
 .nav-logo:hover,
@@ -217,7 +214,6 @@ form {
   align-items: center;
   justify-content: center;
   background-color: white;
-  /* border-radius: 1.5rem; */
   padding: 2.5rem 0 2.5rem 0;
   width: 100vw;
 }
@@ -226,7 +222,7 @@ input {
   font-size: 1.2rem !important;
   border-radius: 0 !important;
   border: none !important;
-  font-weight: 500 !important;
+  font-weight: 300 !important;
 }
 
 input:focus,
@@ -234,6 +230,7 @@ select:focus,
 button:focus {
   outline: none !important;
 }
+
 
 input::placeholder {
   color: rgb(165, 165, 165) !important;
@@ -306,11 +303,7 @@ input::placeholder {
 }
 
 
-
 /* ACCOUNT */
-
-
-
 
 
 .profile-picture {
@@ -386,7 +379,6 @@ input::placeholder {
   width: 100%;
 }
 
-
 .user-info {
   display: flex;
   flex-direction: column;
@@ -399,9 +391,10 @@ input::placeholder {
   margin-top: 5rem;
 }
 
-
-
 .update-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90vw;
   margin-bottom: 1rem;
 }
@@ -415,7 +408,6 @@ input::placeholder {
 }
 
 .profile-picture-update:hover {
-  border: 2px solid white;
   cursor: pointer;
 }
 
@@ -428,8 +420,8 @@ input::placeholder {
 }
 
 
-
 /* CRYPTO */
+
 
 .container-coins {
   background-color: white;
@@ -443,6 +435,8 @@ input::placeholder {
   height: 10vh;
   margin: 1rem 0 1rem 0;
 }
+
+
 
 .coin-single:nth-of-type(1) {
   margin-top: 1.5rem
@@ -496,7 +490,6 @@ input::placeholder {
   background-color: transparent;
   margin-top: 5rem;
   margin-bottom: 1rem;
-  /* background-color: red; */
 }
 
 .filter-currency {
@@ -527,7 +520,6 @@ input::placeholder {
   flex-direction: column;
   background-color: white;
   padding: 2.5rem 0 2.5rem 0;
-  border-radius: 1.5rem;
   width: 100vw;
 }
 
@@ -538,11 +530,13 @@ input::placeholder {
 
 .coin-upper-info {
   margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .coin-image-large {
   margin-left: 1rem;
-  width: 30vw
+  width: 30vw;
+  max-height: 100%;
 }
 
 .coin-heading {
@@ -557,11 +551,12 @@ input::placeholder {
 }
 
 .coin-lower {
-  height: 40vh;
+  height: 35vh;
   overflow-y: scroll;
 }
 
 .coin-desc {
+  color: rgb(61, 61, 61);
   font-size: 1rem;
   padding: 0rem 1.5rem 0rem 1.5rem;
   word-break: break-all;
@@ -610,6 +605,166 @@ input::placeholder {
   background-color: red;
 }
 
+.btn-dup:hover,
 .btn-dup:focus {
-  background-color: red;
+  background-color: rgb(245, 79, 79);
+}
+
+
+@media (min-width: 767px) {
+
+  #logo {
+    display: none;
+  }
+
+  .global-desk {
+    display: flex;
+    height: inherit !important;
+    flex-direction: row-reverse;
+    height: 100vh !important;
+    overflow-y: visible !important;
+  }
+
+  form {
+    width: 30vw;
+  }
+
+  .form-control {
+    width: 20vw !important;
+  }
+
+  .sq-desk {
+    margin-left: 3rem;
+  }
+
+  .user-info {
+    display: flex;
+    position: absolute;
+    top: 15vh;
+    left: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    padding: 2.5rem 0 2.5rem 0;
+    margin-top: 0;
+  }
+
+
+  .profile-picture {
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .crypto-desk {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .account-coins-desk {
+    width: 60vw;
+  }
+
+  .coin {
+    position: absolute;
+    align-items: center;
+    top: 15vh;
+    width: 60vw;
+    margin-bottom: 10rem !important;
+  }
+
+  .coin-image-large {
+    margin-left: 1rem;
+    width: 10vw
+  }
+
+  .coin-single-desk {
+    width: 70vw;
+  }
+
+  .coin-desc {
+    font-size: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  .coin-perc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 10vw;
+    height: 10vw;
+
+  }
+
+  .coin-mid {
+    margin-bottom: 1rem;
+    width: 60vw;
+    height: 10vh;
+  }
+
+  .coin-lower {
+    height: inherit;
+  }
+
+
+  .btn-dup {
+    font-size: .7rem;
+    margin-bottom: 0 !important;
+  }
+
+  .btn-dup:focus {
+    font-size: .7rem;
+  }
+
+  .coin-upper {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60vw;
+  }
+
+  .coin-heading {
+    font-size: 2rem;
+  }
+
+
+  .profile-picture-update {
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    height: width;
+    margin: .5rem .25rem .5rem .25rem;
+  }
+
+  .profile-picture-update-active {
+    width: 5vw;
+    height: 5vw;
+    border: 3px solid #1e77eb;
+  }
+
+  .update-picture {
+    width: 30vw;
+    margin-bottom: 1rem;
+  }
+
+  .delete-user {
+    margin-top: 1rem;
+  }
+
+  .container-coins {
+    width: 70vw;
+  }
+
+  .coin-single:nth-of-type(1) {
+    margin-top: 3rem
+  }
+
+  .coin-info {
+    justify-content: left;
+    margin-left: 1.5rem;
+  }
 }

@@ -98,7 +98,7 @@ const UpdateAccount = (props) => {
   return <div className="container-global">
     <Fade>
 
-      <form onSubmit={handleUpdate}>
+      <form className="update-desk" onSubmit={handleUpdate}>
 
         <div className="update-picture">
 
@@ -180,7 +180,7 @@ const UpdateAccount = (props) => {
 
       </form>
 
-      <button onClick={handleDelete} className="btn btn-secondary btn-md btn-custom delete-user">Close account</button>
+      {/* <button onClick={handleDelete} className="btn btn-secondary btn-md btn-custom delete-user btn-dup">Close account</button> */}
 
 
 
