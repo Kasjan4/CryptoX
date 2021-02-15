@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 import Particles from 'react-particles-js'
 
 
@@ -44,13 +44,6 @@ const ParticlesBG = () => {
 
     }}
   />
-
-
-
-
-
-
-
 
 
 

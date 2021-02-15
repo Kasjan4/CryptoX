@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade'
 
 
 
+
 const UpdateAccount = (props) => {
 
   const id = props.match.params.id
@@ -76,8 +77,7 @@ const UpdateAccount = (props) => {
     axios.delete(`/api/users/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
-      .then((res) => {
-        console.log(res)
+      .then(() => {
         localStorage.removeItem('token')
         props.history.push('/')
       })
@@ -175,8 +175,8 @@ const UpdateAccount = (props) => {
 
       <div className="spacer"></div>
 
-
     </Fade>
+
   </div>
 
 }

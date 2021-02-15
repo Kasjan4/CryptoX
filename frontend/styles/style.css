@@ -56,7 +56,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  /* height: 100vh; */
   color: rgb(61, 61, 61);
   background-color: transparent;
 }
@@ -215,7 +214,7 @@ input::placeholder {
   padding: 1rem 2rem;
   color: white !important;
   background-color: #1652f0;
-  transition: .5s;
+  transition: .5s ease;
   display: inline-block;
 }
 
@@ -273,6 +272,7 @@ input::placeholder {
 .delete-user {
   background-color: rgb(238, 53, 53);
   margin-top: 5rem;
+  transition: .5s ease;
 }
 
 .delete-user:hover {
@@ -595,7 +595,7 @@ input::placeholder {
   color: green;
 }
 
-.coin-change-account-ed {
+.coin-change-account-red {
   font-size: .9rem;
   color: red;
 }
@@ -741,6 +741,7 @@ input::placeholder {
 
 .btn-dup {
   background-color: red;
+  transition: .5s ease;
 }
 
 .btn-dup:hover,
@@ -921,7 +922,7 @@ input::placeholder {
   }
 
   .account-panel {
-    margin-top: 5rem;
+    margin-top: 2rem;
     height: min-content;
     margin-right: 2rem;
   }

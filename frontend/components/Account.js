@@ -10,7 +10,6 @@ import * as ReactBootStrap from 'react-bootstrap'
 const Account = (props) => {
 
   const userId = props.match.params.id
-  const token = localStorage.getItem('token')
   const [accountData, setAccountData] = useState({})
   const [watchlist, setWatchlist] = useState([])
   const [loaded, setLoaded] = useState(false)
@@ -41,17 +40,9 @@ const Account = (props) => {
     res.forEach((coin) => {
       userCoins.push(coin.data)
     })
-    console.log(userCoins)
     setWatchlist(userCoins)
     setLoaded(true)
   }
-
-
-
-
-
-
-
 
 
   return <div className="container-crypto">
@@ -94,14 +85,10 @@ const Account = (props) => {
                       <p className="coin-price-account">${Math.round((coin.market_data.current_price.usd + Number.EPSILON) * 100) / 100}</p>
                     </div>
 
-
                   </div>
 
-
-
-
-
                 </div>
+
               </Link>
             })}
 

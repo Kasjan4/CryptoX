@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
 import * as ReactBootStrap from 'react-bootstrap'
 
 
-const Crypto = (props) => {
+const Crypto = () => {
 
   const [crypto, setCrypto] = useState([])
   const [currency, setCurrency] = useState('USD')
@@ -29,7 +28,6 @@ const Crypto = (props) => {
           scrollToTop()
           setLoaded(true)
         })
-
 
     } catch (e) {
       console.log(e)
@@ -63,25 +61,6 @@ const Crypto = (props) => {
   function scrollToTop() {
     window.scrollTo(0, 0)
   }
-  function numberWithCommas(x) {
-    if (!x) return '0'
-
-    else {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-    }
-  }
-
-
-  function formatNumber(value) {
-    if (value >= 1000000) {
-      value = (value / 1000000) + 'M'
-    } else if (value >= 1000) {
-      value = (value / 1000) + 'K'
-    }
-    return value
-  }
-
-
   function abbreviateNumber(value) {
     var newValue = value
     if (value >= 1000) {
@@ -103,8 +82,6 @@ const Crypto = (props) => {
 
 
 
-
-
   return <div className="container-crypto">
 
     <div className="container-filter-coins">
@@ -115,6 +92,13 @@ const Crypto = (props) => {
         <option value="GBP">GBP</option>
       </select>
 
+      <select onChange={handleVolume} className="filter-currency">
+        <option defaultValue hidden>Total volume</option>
+        <option disabled>Total volume</option>
+        <option value="order=volume_desc">Descending</option>
+        <option value="order=volume_asc">Ascending</option>
+      </select>
+
       <select onChange={handleMarketCap} className="filter-currency">
         <option defaultValue hidden>Market cap</option>
         <option disabled>Market cap</option>
@@ -122,12 +106,6 @@ const Crypto = (props) => {
         <option value="order=market_cap_asc">Ascending</option>
       </select>
 
-      <select onChange={handleVolume} className="filter-currency">
-        <option defaultValue hidden>Total volume</option>
-        <option disabled>Total volume</option>
-        <option value="order=volume_desc">Descending</option>
-        <option value="order=volume_asc">Ascending</option>
-      </select>
 
     </div>
 

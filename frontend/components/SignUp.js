@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import Fade from 'react-reveal/Fade'
 
 
-
-
-
-
 const SignUp = (props) => {
-
 
   const [formData, updateFormData] = useState({
     username: '',
@@ -23,28 +18,16 @@ const SignUp = (props) => {
     message: ''
   })
 
-  // const [errors, updateErrors] = useState({
-  //   username: '',
-  //   email: '',
-  //   password: '',
-  //   passwordConfirmation: '',
-  //   isAdmin: false,
-  //   image: 'https://i.imgur.com/uQyt00P.jpg'
-  // })
 
   function handleChange(event) {
-
     const name = event.target.name
-
     const value = event.target.value
 
     const data = {
       ...formData,
       [name]: value
     }
-
     updateFormData(data)
-
   }
 
   function handleSubmit(event) {
@@ -57,7 +40,6 @@ const SignUp = (props) => {
         if (resp.data.errors) {
 
           const errorType = resp.data.errors[Object.keys(resp.data.errors)[0]].message
-          console.log(resp.data)
 
           const newErrors = {
             ...errors,
@@ -73,7 +55,6 @@ const SignUp = (props) => {
   }
 
 
-  console.log(errors)
 
   return <div className="container-global global-desk">
     <Fade>
@@ -147,10 +128,7 @@ const SignUp = (props) => {
 
     </Fade>
 
-
-
   </div>
-
 
 
 }

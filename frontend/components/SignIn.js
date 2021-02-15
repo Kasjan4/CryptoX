@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
@@ -16,7 +16,6 @@ const SignIn = (props) => {
     props.history.push('/crypto')
   }
 
-
   const [formData, updateFormData] = useState({
     email: '',
     password: ''
@@ -32,7 +31,6 @@ const SignIn = (props) => {
       [event.target.name]: event.target.value
     }
     updateFormData(data)
-
   }
 
   function handleSubmit(event) {
@@ -51,7 +49,6 @@ const SignIn = (props) => {
 
       })
   }
-
 
 
 
@@ -107,12 +104,10 @@ const SignIn = (props) => {
 
       </form>
 
-
       <p className="signup-query signup-query-desk-s" >Don&apos;t have an account?<br /> Sign up <Link to="/signup">here</Link></p>
 
     </Fade>
   </div>
-
 
 
 }

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import Fade from 'react-reveal/Fade'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoins } from '@fortawesome/free-solid-svg-icons'
@@ -13,7 +12,7 @@ const Navbar = (props) => {
 
   if (token) {
     const parsedToken = JSON.parse(atob(token.split('.')[1]))
-    console.log(parsedToken)
+
     var userId = parsedToken.sub
   }
 
@@ -49,8 +48,6 @@ const Navbar = (props) => {
           <Link to="/" className="nav-link">Sign in</Link>
         </li>}
 
-
-
         {token && <li className="nav-item">
           <Link to="/" className="nav-link nav-contact"
             onClick={handleLogout}
@@ -63,14 +60,6 @@ const Navbar = (props) => {
 
 
   </nav>
-
-
-
-
-
-
-
-
 
 
 }
