@@ -42,13 +42,8 @@ const SignUp = (props) => {
       ...formData,
       [name]: value
     }
-    const newErrors = {
-      ...errors,
-      [name]: ''
-    }
 
     updateFormData(data)
-    updateErrors(newErrors)
 
   }
 
@@ -83,7 +78,9 @@ const SignUp = (props) => {
   return <div className="container-global global-desk">
     <Fade>
 
-      <h1 className="signin-query sq-desk" >Sign up for your personal <span className="signin-query-bold">Crypto</span> account</h1>
+      <Fade down>
+        <h1 className="signin-query sq-desk" >Sign up for your personal <span className="signin-query-bold">Crypto</span> account</h1>
+      </Fade>
 
       <form onSubmit={handleSubmit}>
 
@@ -136,7 +133,7 @@ const SignUp = (props) => {
         </div>
 
         {errors.message &&
-          <Slide up>
+          <Slide up appear spy={errors}>
             <div className="error-container">
               <p id="error" >
                 {errors.message}

@@ -66,14 +66,18 @@ const Account = (props) => {
 
       <div className="user-info" >
         <Fade>
-          <img className="profile-picture" src={accountData.image} />
-          <h1 className="username" >{accountData.username}</h1>
-          <Link to={`/users/${userId}/edit`} className="btn btn-secondary btn-md btn-custom">Update Details</Link>
 
-          <h1 className={accountData.watchlist.length > 0 ? 'watchlist-heading' : 'watchlist-heading-query'} >{accountData.watchlist.length > 0 ? 'Watchlist' : 'Your watched crypto will appear here'}</h1>
+          <div className="account-panel">
+            <img className="profile-picture" src={accountData.image} />
+            <h1 className="username" >{accountData.username}</h1>
+            <Link to={`/users/${userId}/edit`} className="btn btn-secondary btn-md btn-custom">Update Details</Link>
+          </div>
 
 
-          <div className="container-coins account-coins-desk">
+          <div className="container-coins-account container-coins-desk">
+
+            <h1 className={accountData.watchlist.length > 0 ? 'watchlist-heading' : 'watchlist-heading-query'} >{accountData.watchlist.length > 0 ? 'Watchlist' : 'Your watched crypto will appear here'}</h1>
+
 
             {watchlist.map((coin, index) => {
 

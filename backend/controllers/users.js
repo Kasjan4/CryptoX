@@ -60,7 +60,7 @@ function removeUser(req, res) {
 }
 
 function modifyUser(req, res) {
-  const accountId = req.params.accountId
+  const accountId = req.params.userId
   const body = req.body
 
   const currentUser = req.currentUser
@@ -72,11 +72,15 @@ function modifyUser(req, res) {
       if (!account._id.equals(currentUser._id)) {
         return res.status(401).send({ message: 'Unauthorised' })
       }
+      if (body.password !== body.passwordConfirmation) {
+        return res.send({ message: 'Passwords do not match' })
+      }
       account.set(body)
 
+      res.send(account)
       return account.save()
     })
-    .then(account => res.send(account))
+
     .catch(error => res.send(error))
 }
 

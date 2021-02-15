@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Fade from 'react-reveal/Fade'
-
+import Slide from 'react-reveal/Slide'
 
 
 const UpdateAccount = (props) => {
@@ -30,10 +30,7 @@ const UpdateAccount = (props) => {
   })
 
   const [errors, updateErrors] = useState({
-    username: '',
-    email: '',
-    password: '',
-    passwordConfirmation: ''
+    message: ''
   })
 
   function handleChange(event) {
@@ -46,32 +43,25 @@ const UpdateAccount = (props) => {
       [name]: value,
       image: `${profilePic}`
     }
-    const newErrors = {
-      ...errors,
-      [name]: ''
-    }
 
     updateFormData(data)
-    updateErrors(newErrors)
+
   }
 
   function handleUpdate(event) {
 
     event.preventDefault()
 
-    const token = localStorage.getItem('token')
     axios.put(`/api/users/${id}`, formData, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(resp => {
 
-        if (resp.data.errors) {
-
-          updateErrors(resp.data.errors)
+        if (resp.data.message) {
+          updateErrors(resp.data)
 
         } else {
-          console.log(resp.data)
-          props.history.push(`/users/${props.match.params.id}`)
+          props.history.push(`/users/${id}`)
         }
       })
 
@@ -126,9 +116,7 @@ const UpdateAccount = (props) => {
             name="username"
             required
           />
-          {errors.username && <p id="error" >
-            {`There was a problem with your ${errors.username.path}`}
-          </p>}
+
         </div>
 
         <div className="form-group">
@@ -141,9 +129,7 @@ const UpdateAccount = (props) => {
             name="email"
             required
           />
-          {errors.email && <p id="error" >
-            {`There was a problem with your ${errors.email.path}`}
-          </p>}
+
         </div>
 
         <div className="form-group">
@@ -156,9 +142,7 @@ const UpdateAccount = (props) => {
             name="password"
             required
           />
-          {errors.password && <p id="error" >
-            {`There was a problem with your ${errors.password.path}`}
-          </p>}
+
         </div>
 
         <div className="form-group">
@@ -171,16 +155,23 @@ const UpdateAccount = (props) => {
             name="passwordConfirmation"
             required
           />
-          {errors.passwordConfirmation && <p id="error" >
-            {'Does not match password'}
-          </p>}
+
         </div>
+
+        {errors.message &&
+          <Slide up appear spy={errors}>
+            <div className="error-container">
+              <p id="error" >
+                {errors.message}
+              </p>
+            </div>
+          </Slide>}
 
         <button className="btn btn-secondary btn-md btn-custom">Update</button>
 
       </form>
 
-      {/* <button onClick={handleDelete} className="btn btn-secondary btn-md btn-custom delete-user btn-dup">Close account</button> */}
+      <button onClick={handleDelete} className="btn btn-secondary btn-md btn-custom delete-user btn-dup">Close account</button>
 
 
 

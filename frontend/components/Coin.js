@@ -93,7 +93,7 @@ const Coin = (props) => {
           <div className="coin-upper-info">
             <h1 className="coin-heading" >{coin.name} <span>({coin.symbol})</span></h1>
             <br />
-            <a href={coin.links.homepage} target="_blank" rel='noreferrer'>{coin.links.homepage}</a>
+            <a href={coin.links.homepage[0]} target="_blank" rel='noreferrer'>{coin.links.homepage[0]}</a>
           </div>
 
 

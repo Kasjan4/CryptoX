@@ -18,6 +18,7 @@ const Crypto = (props) => {
   const [marketCap, setMarketCap] = useState('&order=market_cap_desc&')
   const [volume, setVolume] = useState('&order=volume_desc&')
   const [loaded, setLoaded] = useState(false)
+  const [pages, setPages] = useState([-1, 0, 1, 2, 3])
 
   const currencySymbols = {
     GBP: '£',
@@ -28,7 +29,7 @@ const Crypto = (props) => {
   useEffect(() => {
 
     try {
-      axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}${marketCap}${volume}per_page=100&page=1&sparkline=false`)
+      axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}${marketCap}${volume}per_page=20&page=${pages[2]}&sparkline=false`)
         .then(resp => {
           setCrypto(resp.data)
           setLoaded(true)
@@ -39,7 +40,7 @@ const Crypto = (props) => {
       console.log(e)
     }
 
-  }, [currency, marketCap, volume])
+  }, [currency, marketCap, volume, pages])
 
   function handleCurrency(event) {
     setLoaded(false)
@@ -55,9 +56,22 @@ const Crypto = (props) => {
     setMarketCap('')
     setVolume(event.target.value)
   }
+  function handlePage(event) {
+    const newPages = [...pages]
+    newPages[0] = Number(event.target.value) - 2
+    newPages[1] = Number(event.target.value) - 1
+    newPages[2] = Number(event.target.value)
+    newPages[3] = Number(event.target.value) + 1
+    newPages[4] = Number(event.target.value) + 2
+    setPages(newPages)
+    scrollToTop()
+  }
+  function scrollToTop() {
+    window.scrollTo(0, 0)
+  }
 
 
-  console.log(crypto)
+
   return <div className="container-crypto">
 
     <div className="container-filter-coins">
@@ -86,7 +100,7 @@ const Crypto = (props) => {
 
     {!loaded ? <div className="loader"><ReactBootStrap.Spinner className="spinner" animation="grow" /></div> :
 
-      <div className="container-coins">
+      <div className="container-coins" id="scroll-to-top">
         <Fade>
 
           {crypto.map((coin, index) => {
@@ -107,8 +121,20 @@ const Crypto = (props) => {
               </div>
             </Link>
           })}
-
         </Fade>
+
+        <Fade appear spy={pages}>
+          <div className="container-pages">
+
+            <button hidden={pages[0] < 1 ? true : false} onClick={handlePage} value={pages[0]} className="btn btn-md btn-page">{pages[0]}</button>
+            <button hidden={pages[1] < 1 ? true : false} onClick={handlePage} value={pages[1]} className="btn btn-md btn-page">{pages[1]}</button>
+            <button onClick={handlePage} value={pages[2]} className="btn btn-md btn-page btn-page-active">{pages[2]}</button>
+            <button onClick={handlePage} value={pages[3]} className="btn btn-md btn-page">{pages[3]}</button>
+            <button onClick={handlePage} value={pages[4]} className="btn btn-md btn-page">{pages[4]}</button>
+
+          </div>
+        </Fade>
+
       </div>}
 
 

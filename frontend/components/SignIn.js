@@ -57,11 +57,13 @@ const SignIn = (props) => {
 
 
   return <div className="container-global">
+
     <Fade>
 
-      <div id="logo" >{logo}</div>
-      <h1 className="signin-query" >Sign in to <span className="signin-query-bold">CryptoX</span><br /></h1>
-
+      <Fade down>
+        <div id="logo" >{logo}</div>
+        <h1 className="signin-query signin-query-desk" >Sign in to <span className="signin-query-bold">CryptoX</span><br /></h1>
+      </Fade>
 
       <form onSubmit={handleSubmit}>
 
@@ -94,7 +96,7 @@ const SignIn = (props) => {
 
 
         {errors.message &&
-          <Slide up>
+          <Slide up appear spy={errors}>
             <div className="error-container">
               <p id="error" >
                 {errors.message}
@@ -107,7 +109,7 @@ const SignIn = (props) => {
       </form>
 
 
-      <p className="signup-query" >Don&apos;t have an account?<br /> Sign up <Link to="/signup">here</Link></p>
+      <p className="signup-query signup-query-desk-s" >Don&apos;t have an account?<br /> Sign up <Link to="/signup">here</Link></p>
 
     </Fade>
   </div>

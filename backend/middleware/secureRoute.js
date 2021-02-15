@@ -14,16 +14,17 @@ function secureRoute(req, res, next) {
   const token = authToken.replace('Bearer ', '')
 
   jwt.verify(token, secret, (err, payload) => {
-    if (err) return res.status(401).send({ message: 'Unauthorised 2' }); console.log('third check')
+    if (err) return res.status(401).send({ message: 'Unauthorised 2' }), console.log('third check')
 
     const userId = payload.sub
     User
       .findById(userId)
       .then(user => {
-        if (!user) return res.status(401).send({ message: 'Unauthorised 3' }); console.log('fourth check')
+
+        if (!user) return res.status(401).send({ message: 'Unauthorised 3' }), console.log('fourth check')
 
         req.currentUser = user
-
+        console.log('user found')
         next()
       })
       .catch(() => res.status(401).send({ message: 'Unauthorised 4' }))

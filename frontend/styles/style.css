@@ -17,13 +17,7 @@ body {
 }
 
 
-
-
-
-
 /* UNIVERSAL */
-
-
 
 .container-global {
   display: flex;
@@ -42,11 +36,23 @@ body {
   /* justify-content: center; */
   align-items: center;
   width: 100vw;
-  color: black;
+  color: rgb(61, 61, 61);
   background-color: transparent;
 }
 
+#tsparticles {
+  position: absolute !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -999 !important;
+}
+
+canvas {
+  z-index: -999 !important;
+}
+
 #logo {
+  text-align: center;
   color: white;
   margin-bottom: 1.2rem;
   font-size: 1.7rem;
@@ -213,9 +219,10 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: rgb(255, 255, 255, 0.9);
   padding: 2.5rem 0 2.5rem 0;
   width: 100vw;
+  border-radius: 1rem;
 }
 
 input {
@@ -223,6 +230,10 @@ input {
   border-radius: 0 !important;
   border: none !important;
   font-weight: 300 !important;
+}
+
+select {
+  color: rgb(255, 255, 255, 0.7) !important;
 }
 
 input:focus,
@@ -237,16 +248,16 @@ input::placeholder {
 }
 
 .form-control {
-  color: black !important;
+  color: rgb(61, 61, 61) !important;
   background-color: transparent !important;
   border: 1px solid !important;
-  border-color: rgb(228, 228, 228) !important;
+  border-color: rgb(204, 204, 204) !important;
   width: 90vw !important;
 }
 
 
 .form-control:hover {
-  background-color: rgb(30, 119, 235);
+  border-color: #1652f0 !important;
 }
 
 .form-control:focus {
@@ -274,7 +285,7 @@ input::placeholder {
 
 .btn-secondary:focus {
   /* border: 1px solid rgb(255, 255, 255, 0.5); */
-  background-color: #1652f0;
+  background-color: #4d7bf1;
 }
 
 .signin-query {
@@ -313,8 +324,8 @@ input::placeholder {
 }
 
 .username {
-  color: black;
-  font-weight: 700;
+  color: rgb(61, 61, 61);
+  font-weight: 500;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -330,6 +341,7 @@ input::placeholder {
 
 
 .watchlist-heading {
+  color: rgb(61, 61, 61);
   font-size: 2.5rem;
   margin-top: 2rem;
   text-align: center;
@@ -364,6 +376,7 @@ input::placeholder {
   height: 20vw;
   background-color: red;
   text-align: center;
+  border-radius: 1rem 1rem 0 0;
 }
 
 #error {
@@ -383,12 +396,19 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   width: 100vw;
-  background-color: white;
+  background-color: rgb(255, 255, 255, 0.9);
   border-radius: 0;
   padding: 2.5rem 0 2.5rem 0;
   margin-top: 5rem;
+}
+
+.account-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .update-picture {
@@ -422,18 +442,74 @@ input::placeholder {
 
 /* CRYPTO */
 
+.container-pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: cnter;
+  /* background-color: red; */
+  height: 8vh;
+}
+
+.btn-page {
+  border: 0 !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.4rem !important;
+  padding: 0.05rem 0.1rem !important;
+  color: white !important;
+  background-color: #1652f0;
+  transition: .5s;
+  display: inline-block;
+  margin: .5rem .5rem .5rem .5rem !important;
+  width: 15%;
+}
+
+.btn-page:hover {
+  border: 0;
+  background-color: #1652f0;
+}
+
+.btn-page:focus {
+  border: 0;
+  background-color: #1652f0;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.btn-page-active {
+  background-color: #4d7bf1;
+}
+
+.btn-page-active:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+
+}
+
+
+
 
 .container-coins {
-  background-color: white;
+  background-color: rgb(255, 255, 255, 0.9);
+  border-radius: 1rem;
+}
+
+.container-coins-account {
+  background-color: transparent;
+  border-radius: 1rem;
 }
 
 .coin-single {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100vw;
-  height: 10vh;
-  margin: 1rem 0 1rem 0;
+  height: 15vh;
+  /* margin: .2rem 0 .2rem 0; */
+  background-color: rgb(255, 255, 255, 0.4);
 }
 
 
@@ -453,6 +529,7 @@ input::placeholder {
 .coin-image {
   max-width: 14vw;
   max-height: 100%;
+  object-fit: contain;
 }
 
 .coin-name {
@@ -518,9 +595,10 @@ input::placeholder {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(255, 255, 255, 0.9);
   padding: 2.5rem 0 2.5rem 0;
   width: 100vw;
+  border-radius: 1rem;
 }
 
 .coin-upper {
@@ -537,6 +615,7 @@ input::placeholder {
   margin-left: 1rem;
   width: 30vw;
   max-height: 100%;
+  object-fit: contain;
 }
 
 .coin-heading {
@@ -553,13 +632,16 @@ input::placeholder {
 .coin-lower {
   height: 35vh;
   overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .coin-desc {
   color: rgb(61, 61, 61);
   font-size: 1rem;
   padding: 0rem 1.5rem 0rem 1.5rem;
-  word-break: break-all;
+  text-align: center;
+
 }
 
 .coin-mid {
@@ -586,7 +668,7 @@ input::placeholder {
 
 .coin-perc-type {
   font-size: 1.1rem;
-  color: black;
+  color: rgb(61, 61, 61);
   margin: 0;
   padding: 0;
 }
@@ -642,12 +724,13 @@ input::placeholder {
     position: absolute;
     top: 15vh;
     left: 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
     width: 70vw;
-    padding: 2.5rem 0 2.5rem 0;
+    padding: 2.5rem 2rem 2.5rem 3rem;
     margin-top: 0;
+    border-radius: 1rem;
   }
 
 
@@ -664,8 +747,8 @@ input::placeholder {
     align-items: center;
   }
 
-  .account-coins-desk {
-    width: 60vw;
+  .container-coins-desk {
+    width: 100%;
   }
 
   .coin {
@@ -673,7 +756,7 @@ input::placeholder {
     align-items: center;
     top: 15vh;
     width: 60vw;
-    margin-bottom: 10rem !important;
+    margin-bottom: 10rem;
   }
 
   .coin-image-large {
@@ -682,7 +765,7 @@ input::placeholder {
   }
 
   .coin-single-desk {
-    width: 70vw;
+    width: 100%;
   }
 
   .coin-desc {
@@ -709,6 +792,7 @@ input::placeholder {
 
   .coin-lower {
     height: inherit;
+    width: 60vw;
   }
 
 
@@ -734,15 +818,15 @@ input::placeholder {
 
   .profile-picture-update {
     border-radius: 50%;
-    width: 4vw;
-    height: 4vw;
+    width: 5vw;
+    height: 5vw;
     height: width;
     margin: .5rem .25rem .5rem .25rem;
   }
 
   .profile-picture-update-active {
-    width: 5vw;
-    height: 5vw;
+    width: 6vw;
+    height: 6vw;
     border: 3px solid #1e77eb;
   }
 
@@ -751,8 +835,15 @@ input::placeholder {
     margin-bottom: 1rem;
   }
 
+  .update-desk {
+    padding: 1rem 0 1rem 0 !important;
+  }
+
   .delete-user {
     margin-top: 1rem;
+    position: absolute;
+    right: 3rem;
+    bottom: 1rem;
   }
 
   .container-coins {
@@ -767,4 +858,50 @@ input::placeholder {
     justify-content: left;
     margin-left: 1.5rem;
   }
+
+  .signup-query {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .signup-query a {
+    font-size: 1.05rem;
+  }
+
+  .error-container {
+    width: 30vw;
+    height: 8vh;
+  }
+
+  #error {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: white;
+  }
+
+  .account-panel {
+    height: min-content;
+    margin-right: 2rem;
+  }
+
+  .signin-query-desk {
+    margin-bottom: 1.5rem;
+  }
+
+  .signup-query-desk-s {
+    margin-bottom: 0;
+  }
+
+  .container-pages {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    height: 10vh;
+  }
+
+  .coin-image {
+    max-width: 8vw;
+
+  }
+
+
 }

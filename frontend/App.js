@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './styles/style.css'
 
-
+import ParticlesBG from './components/ParticlesBG'
 import SignIn from './components/SignIn'
 import Navbar from './components/Navbar'
 import SignUp from './components/SignUp'
@@ -10,10 +10,12 @@ import Crypto from './components/Crypto'
 import Coin from './components/Coin'
 import Account from './components/Account'
 import UpdateAccount from './components/UpdateAccount'
+import Particles from 'react-particles-js'
 
 
 const App = () => (
   <BrowserRouter>
+    <ParticlesBG />
     <Navbar />
     <Switch>
 
