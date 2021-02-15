@@ -87,11 +87,11 @@ const Account = (props) => {
                   <div className="coin-market">
 
                     <div className="res-change-account">
-                      <p className={coin.market_data.price_change_percentage_24h > 0 ? 'coin-change' : 'coin-change-red'}>{coin.market_data.price_change_percentage_24h}%</p>
+                      <p className={coin.market_data.price_change_percentage_24h > 0 ? 'coin-change-account' : 'coin-change-account-red'}>{coin.market_data.price_change_percentage_24h}%</p>
                     </div>
 
                     <div className="res-price-account">
-                      <p className="coin-price">${Math.round((coin.market_data.current_price.usd + Number.EPSILON) * 100) / 100}</p>
+                      <p className="coin-price-account">${Math.round((coin.market_data.current_price.usd + Number.EPSILON) * 100) / 100}</p>
                     </div>
 
 

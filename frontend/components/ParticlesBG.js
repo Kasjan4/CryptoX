@@ -34,19 +34,7 @@ const ParticlesBG = () => {
           }
         }
       },
-      'interactivity': {
-        'events': {
-          'onclick': {
-            'enable': true,
-            'mode': 'push'
-          }
-        },
-        'modes': {
-          'push': {
-            'particles_nb': 1
-          }
-        }
-      },
+
       'retina_detect': true
     }}
     style={{

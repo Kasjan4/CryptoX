@@ -4,9 +4,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
-  /* overflow-x: hidden !important; */
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -14,11 +12,11 @@ html {
 
 body {
   background-color: #1652f0;
-  /* width: 100vw; */
 }
 
 
 /* UNIVERSAL */
+
 
 .container-global {
   display: flex;
@@ -40,7 +38,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
   width: 100vw;
 
 }
@@ -48,9 +45,7 @@ body {
 .container-crypto {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: max-content;
-  overflow-x: scroll !important;
   color: rgb(61, 61, 61);
   background-color: transparent;
 }
@@ -95,8 +90,6 @@ canvas {
   z-index: 999;
 }
 
-
-
 .spinner {
   color: white;
   width: 5rem;
@@ -105,27 +98,17 @@ canvas {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* NAVBAR */
+
 
 nav {
   z-index: 999 !important;
+  width: 100% !important;
 }
 
 .custom-toggler {
   border-color: rgb(255, 255, 255, 0.7) !important;
 }
-
 
 .nav-logo,
 .nav-logo:hover,
@@ -134,7 +117,6 @@ nav {
   text-decoration: none;
   cursor: default;
 }
-
 
 .navbar {
   background-color: #1652f0 !important;
@@ -243,7 +225,6 @@ input::placeholder {
 }
 
 .btn-secondary:focus {
-  /* border: 1px solid rgb(255, 255, 255, 0.5); */
   background-color: #4d7bf1;
 }
 
@@ -291,7 +272,6 @@ input::placeholder {
 
 .delete-user {
   background-color: rgb(238, 53, 53);
-
   margin-top: 5rem;
 }
 
@@ -317,18 +297,16 @@ input::placeholder {
 }
 
 
-
 /* UPDATE */
 
+
 .update-desk {
-  /* position: relative;
-  top: 15vh; */
   margin-top: 15vh;
 }
 
 
-
 /* SIGNUP */
+
 
 .error-container {
   display: flex;
@@ -347,7 +325,6 @@ input::placeholder {
   padding: 0;
   margin: 0;
   color: white;
-
 }
 
 
@@ -359,20 +336,15 @@ input::placeholder {
 }
 
 .user-info {
-  /* position: absolute;
-  top: 15vh; */
   margin-top: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   width: 100vw;
   background-color: rgb(255, 255, 255, 0.9);
   border-radius: 1rem;
   padding: 2.5rem 0 2.5rem 0;
 }
-
-
 
 .account-panel {
   display: flex;
@@ -401,7 +373,6 @@ input::placeholder {
   cursor: pointer;
 }
 
-
 .profile-picture-update-active {
   border-radius: 50%;
   width: 30vw;
@@ -411,6 +382,7 @@ input::placeholder {
 
 
 /* CRYPTO */
+
 
 .stat-headings {
   display: flex;
@@ -426,6 +398,12 @@ input::placeholder {
   margin: 0;
   padding: 0;
   font-weight: 300;
+}
+
+.stat-title-small {
+  font-size: .6rem;
+  margin: 0;
+  padding: 0;
 }
 
 .stats-wrapper {
@@ -454,16 +432,10 @@ input::placeholder {
   text-align: center;
 }
 
-
-
-
-
-
 .stat-price,
 .res-price {
   margin-right: 1rem !important;
 }
-
 
 .res-mc,
 .res-volume,
@@ -474,16 +446,12 @@ input::placeholder {
 .stat-price,
 .stat-change {
   font-size: 1rem;
-  /* padding: 0 .5rem 0 .5rem; */
   min-width: 20%;
   max-width: 20%;
   margin: 0;
   padding: 0 .5rem 0 .5rem;
   text-align: center;
-  /* background-color: purple; */
 }
-
-
 
 .res-mc p,
 .res-volume p,
@@ -502,19 +470,11 @@ input::placeholder {
   text-align: center;
 }
 
-
-
-
-
-
-
-
 .container-pages {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: cnter;
-  /* background-color: red; */
   height: 8vh;
 }
 
@@ -552,16 +512,11 @@ input::placeholder {
 .btn-page-active:focus {
   outline: 0 !important;
   box-shadow: none !important;
-
 }
-
-
-
 
 .container-coins {
   background-color: rgb(255, 255, 255, 0.9);
   border-radius: 1rem;
-  /* min-width: 250vw */
 }
 
 .container-coins-account {
@@ -569,29 +524,16 @@ input::placeholder {
   border-radius: 1rem;
 }
 
-/* .coin-single-container {
-  min-width: 10vw;
-  min-height: 10vh;
-  margin: 0;
-  padding: 0;
-  background-color: red !important;
-  z-index: 999 !important;
-} */
-
 .coin-single {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* width: 100vw; */
   height: 15vh;
   min-width: 100%;
-  /* margin: .2rem 0 .2rem 0; */
   background-color: rgb(255, 255, 255, 0.4);
-
+  border-radius: 1rem;
 }
-
-
 
 .coin-single:nth-of-type(1) {
   margin-top: 1.5rem
@@ -600,7 +542,6 @@ input::placeholder {
 .coin-info {
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   align-items: center;
   margin-left: 1rem;
   margin-right: 2rem;
@@ -635,6 +576,10 @@ input::placeholder {
   font-size: .9rem;
 }
 
+.coin-price-account {
+  font-size: .9rem;
+}
+
 .coin-symbol {
   font-size: 1rem;
   text-transform: uppercase;
@@ -643,6 +588,16 @@ input::placeholder {
 .coin-change {
   font-size: .9rem;
   color: green;
+}
+
+.coin-change-account {
+  font-size: .9rem;
+  color: green;
+}
+
+.coin-change-account-ed {
+  font-size: .9rem;
+  color: red;
 }
 
 .coin-change-red {
@@ -682,8 +637,6 @@ input::placeholder {
 /* COIN */
 
 .coin {
-  /* position: absolute;
-  top: 15vh; */
   margin-top: 15vh;
   display: flex;
   align-items: center;
@@ -743,7 +696,6 @@ input::placeholder {
   font-size: 1rem;
   padding: 0rem 1.5rem 0rem 1.5rem;
   text-align: center;
-
 }
 
 .coin-mid {
@@ -758,14 +710,12 @@ input::placeholder {
   background-color: rgb(255, 255, 255, 0.2);
 }
 
-
 .coin-perc {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  /* border-radius: 50%; */
   width: 25vw;
   height: 25vw;
 
@@ -827,18 +777,13 @@ input::placeholder {
 
   .user-info {
     display: flex;
-    /* position: absolute;
-    top: 15vh; */
     margin-top: 15vh;
     left: 0 auto;
     flex-direction: row;
-    /* justify-content: center; */
-    /* align-items: center; */
     width: 70vw;
     padding: 2.5rem 2rem 2.5rem 3rem;
     border-radius: 1rem;
   }
-
 
   .profile-picture {
     border-radius: 50%;
@@ -859,9 +804,7 @@ input::placeholder {
 
   .coin {
     margin-top: 15vh;
-    /* position: absolute; */
     align-items: center;
-    /* top: 15vh; */
     width: 60vw;
   }
 
@@ -900,7 +843,6 @@ input::placeholder {
     width: 60vw;
   }
 
-
   .btn-dup {
     font-size: 1.2rem;
     margin-bottom: 0 !important;
@@ -919,7 +861,6 @@ input::placeholder {
   .coin-heading {
     font-size: 2rem;
   }
-
 
   .profile-picture-update {
     border-radius: 50%;
@@ -1001,7 +942,6 @@ input::placeholder {
 
   .coin-image {
     max-width: 8vw;
-
   }
 
   .coin-stats {
@@ -1015,22 +955,27 @@ input::placeholder {
     height: 20vh;
   }
 
+
   /* CRYPTO */
+
 
   .stat-headings {
     display: flex;
     flex-direction: row;
-
     background-color: rgb(255, 255, 255, 0.4);
-    /* width: 100%; */
   }
 
   .stat-title {
+    display: inline-block;
     color: rgba(0, 0, 0, 0.5);
     font-size: 1.4rem;
     margin: 0;
     padding: 0;
     font-weight: 300;
+  }
+
+  .stat-title-small {
+    font-size: .7rem;
   }
 
   .stats-wrapper {
@@ -1041,8 +986,6 @@ input::placeholder {
     margin-right: 1rem;
     margin-left: 2rem;
   }
-
-
 
   .stat-volume,
   .stat-mc,
@@ -1063,5 +1006,19 @@ input::placeholder {
     align-items: center !important;
     overflow-x: hidden !important;
     width: 100vw;
+  }
+
+  .coin-change-account {
+    font-size: 1.3rem;
+    color: green;
+  }
+
+  .coin-change-account-red {
+    font-size: 1.3rem;
+    color: red;
+  }
+
+  .coin-price-account {
+    font-size: 1.3rem
   }
 }

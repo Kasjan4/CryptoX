@@ -149,7 +149,7 @@ const Crypto = (props) => {
                 <p className="stat-title" >M/C</p>
               </div>
               <div className="stat-change">
-                <p className="stat-title" >Change</p>
+                <p className="stat-title" >Change<span className="stat-title-small">(24H)</span></p>
               </div>
               <div className="stat-price">
                 <p className="stat-title" >Price</p>
