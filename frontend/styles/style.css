@@ -4,7 +4,9 @@
 * {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+  /* overflow-x: hidden !important; */
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -12,8 +14,7 @@ html {
 
 body {
   background-color: #1652f0;
-  overflow-x: hidden;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 
@@ -26,8 +27,12 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.spacer {
+  min-height: 3rem;
+  width: 100%;
 }
 
 .container-global-coin {
@@ -37,15 +42,15 @@ body {
   align-items: center;
   /* height: 100vh; */
   width: 100vw;
-  overflow-x: hidden;
 
 }
 
 .container-crypto {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100vw;
+  /* align-items: center; */
+  width: max-content;
+  overflow-x: scroll !important;
   color: rgb(61, 61, 61);
   background-color: transparent;
 }
@@ -99,83 +104,17 @@ canvas {
   z-index: 999;
 }
 
-/* HOME */
-
-.home-info {
-  position: absolute;
-  top: 20%;
-  left: 4rem;
-  text-align: left;
-  font-weight: 100;
-}
-
-.home-info p {
-  font-size: 1.2rem;
-}
-
-.home-info p strong {
-  font-size: 1.4rem;
-}
-
-#mic {
-  font-size: 3rem;
-  color: rgb(255, 255, 255, 0.7);
-  background: none;
-  border: none;
-  transition: ease .3s;
-}
-
-#mic:hover {
-  font-size: 3rem;
-  color: #1e77eb;
-  background: none;
-  border: none;
-}
-
-#mic:focus {
-  font-size: 3rem;
-  color: red;
-  background: none;
-  border: none;
-
-}
-
-.transcript,
-.input-text {
-  font-size: 3rem;
-  text-align: left;
-  position: absolute;
-  top: 30%;
-  right: 5rem;
-  width: 25rem;
-  overflow-x: scroll;
-}
-
-
-.success,
-.duplicate-found,
-.no-country {
-  text-align: left;
-  font-size: 1rem;
-  font-weight: 100;
-  position: absolute;
-  top: 45%;
-  right: 15rem;
-
-}
 
 
 
-.or {
-  color: rgb(255, 255, 255, 0.7);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
 
 
-.svg-inline--fa .fa-microphone .fa-w-11 .fa-3x {
-  color: red !important;
-}
+
+
+
+
+
+
 
 /* NAVBAR */
 
@@ -183,12 +122,9 @@ nav {
   z-index: 999 !important;
 }
 
-
-
 .custom-toggler {
   border-color: rgb(255, 255, 255, 0.7) !important;
 }
-
 
 
 .nav-logo,
@@ -355,8 +291,8 @@ input::placeholder {
 
 .delete-user {
   background-color: rgb(238, 53, 53);
-  position: absolute;
-  bottom: 3rem;
+
+  margin-top: 5rem;
 }
 
 .delete-user:hover {
@@ -385,8 +321,9 @@ input::placeholder {
 /* UPDATE */
 
 .update-desk {
-  position: absolute;
-  top: 15vh;
+  /* position: relative;
+  top: 15vh; */
+  margin-top: 15vh;
 }
 
 
@@ -422,8 +359,9 @@ input::placeholder {
 }
 
 .user-info {
-  position: absolute;
-  top: 15vh;
+  /* position: absolute;
+  top: 15vh; */
+  margin-top: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -433,6 +371,8 @@ input::placeholder {
   border-radius: 1rem;
   padding: 2.5rem 0 2.5rem 0;
 }
+
+
 
 .account-panel {
   display: flex;
@@ -471,6 +411,103 @@ input::placeholder {
 
 
 /* CRYPTO */
+
+.stat-headings {
+  display: flex;
+  flex-direction: row;
+  border-radius: 1rem 1rem 0 0;
+  background-color: rgb(255, 255, 255, 0.4);
+  width: 100%;
+}
+
+.stat-title {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+.stats-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-right: 1rem;
+  margin-left: 2rem;
+}
+
+.stats-spacer {
+  margin-left: 1rem;
+  margin-right: 2rem;
+  min-width: 30%;
+  max-width: 30%;
+}
+
+.stat-volume,
+.stat-mc,
+.stat-price,
+.stat-change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+
+
+
+.stat-price,
+.res-price {
+  margin-right: 1rem !important;
+}
+
+
+.res-mc,
+.res-volume,
+.res-change,
+.res-price,
+.stat-volume,
+.stat-mc,
+.stat-price,
+.stat-change {
+  font-size: 1rem;
+  /* padding: 0 .5rem 0 .5rem; */
+  min-width: 20%;
+  max-width: 20%;
+  margin: 0;
+  padding: 0 .5rem 0 .5rem;
+  text-align: center;
+  /* background-color: purple; */
+}
+
+
+
+.res-mc p,
+.res-volume p,
+.res-change p,
+.res-price p {
+  margin: 0 !important;
+}
+
+.res-change-account,
+.res-price-account {
+  min-width: 50%;
+  max-width: 50%;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0 .5rem 0 .5rem;
+  text-align: center;
+}
+
+
+
+
+
+
+
 
 .container-pages {
   display: flex;
@@ -524,6 +561,7 @@ input::placeholder {
 .container-coins {
   background-color: rgb(255, 255, 255, 0.9);
   border-radius: 1rem;
+  /* min-width: 250vw */
 }
 
 .container-coins-account {
@@ -531,15 +569,26 @@ input::placeholder {
   border-radius: 1rem;
 }
 
+/* .coin-single-container {
+  min-width: 10vw;
+  min-height: 10vh;
+  margin: 0;
+  padding: 0;
+  background-color: red !important;
+  z-index: 999 !important;
+} */
+
 .coin-single {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  /* width: 100vw; */
   height: 15vh;
+  min-width: 100%;
   /* margin: .2rem 0 .2rem 0; */
   background-color: rgb(255, 255, 255, 0.4);
+
 }
 
 
@@ -551,9 +600,12 @@ input::placeholder {
 .coin-info {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   margin-left: 1rem;
+  margin-right: 2rem;
+  min-width: 30%;
+  max-width: 30%;
 }
 
 .coin-image {
@@ -569,12 +621,18 @@ input::placeholder {
 }
 
 .coin-market {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   margin-right: 1rem;
+  margin-left: 2rem;
   text-align: right;
+  width: 100%;
+
 }
 
 .coin-price {
-  font-size: 1.1rem;
+  font-size: .9rem;
 }
 
 .coin-symbol {
@@ -583,10 +641,12 @@ input::placeholder {
 }
 
 .coin-change {
+  font-size: .9rem;
   color: green;
 }
 
 .coin-change-red {
+  font-size: .9rem;
   color: red;
 }
 
@@ -622,8 +682,9 @@ input::placeholder {
 /* COIN */
 
 .coin {
-  position: absolute;
-  top: 15vh;
+  /* position: absolute;
+  top: 15vh; */
+  margin-top: 15vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -643,6 +704,9 @@ input::placeholder {
 .coin-upper {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
 }
 
 .coin-upper-info {
@@ -669,9 +733,8 @@ input::placeholder {
 }
 
 .coin-lower {
-  height: 35vh;
+  max-height: 35vh;
   overflow-y: scroll;
-  overflow-x: hidden;
   width: 100vw;
 }
 
@@ -764,15 +827,15 @@ input::placeholder {
 
   .user-info {
     display: flex;
-    position: absolute;
-    top: 15vh;
+    /* position: absolute;
+    top: 15vh; */
+    margin-top: 15vh;
     left: 0 auto;
     flex-direction: row;
     /* justify-content: center; */
     /* align-items: center; */
     width: 70vw;
     padding: 2.5rem 2rem 2.5rem 3rem;
-    margin-top: 0;
     border-radius: 1rem;
   }
 
@@ -791,15 +854,15 @@ input::placeholder {
   }
 
   .container-coins-desk {
-    width: 100%;
+    width: 75%;
   }
 
   .coin {
-    position: absolute;
+    margin-top: 15vh;
+    /* position: absolute; */
     align-items: center;
-    top: 15vh;
+    /* top: 15vh; */
     width: 60vw;
-    margin-bottom: 10rem;
   }
 
   .coin-image-large {
@@ -839,12 +902,12 @@ input::placeholder {
 
 
   .btn-dup {
-    font-size: .7rem;
+    font-size: 1.2rem;
     margin-bottom: 0 !important;
   }
 
   .btn-dup:focus {
-    font-size: .7rem;
+    font-size: 1.2rem;
   }
 
   .coin-upper {
@@ -882,10 +945,8 @@ input::placeholder {
   }
 
   .delete-user {
-    margin-top: 1rem;
-    position: absolute;
-    right: 3rem;
-    bottom: 1rem;
+    margin-top: 3rem;
+
   }
 
   .container-coins {
@@ -919,6 +980,7 @@ input::placeholder {
   }
 
   .account-panel {
+    margin-top: 5rem;
     height: min-content;
     margin-right: 2rem;
   }
@@ -949,5 +1011,57 @@ input::placeholder {
     width: 60vw;
   }
 
+  .coin-single {
+    height: 20vh;
+  }
 
+  /* CRYPTO */
+
+  .stat-headings {
+    display: flex;
+    flex-direction: row;
+
+    background-color: rgb(255, 255, 255, 0.4);
+    /* width: 100%; */
+  }
+
+  .stat-title {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+  }
+
+  .stats-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+    margin-right: 1rem;
+    margin-left: 2rem;
+  }
+
+
+
+  .stat-volume,
+  .stat-mc,
+  .stat-price,
+  .stat-change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stat-price {
+    margin-right: 1rem;
+  }
+
+  .container-crypto {
+    justify-content: center !important;
+    align-items: center !important;
+    overflow-x: hidden !important;
+    width: 100vw;
+  }
 }

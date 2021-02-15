@@ -6,17 +6,11 @@ import Slide from 'react-reveal/Slide'
 import * as ReactBootStrap from 'react-bootstrap'
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoins, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
-
 const Crypto = (props) => {
 
-  const token = localStorage.getItem('token')
-  const logo = <FontAwesomeIcon icon={faCoins} size="2x" />
   const [crypto, setCrypto] = useState([])
   const [currency, setCurrency] = useState('USD')
-  const [marketCap, setMarketCap] = useState('&order=market_cap_desc&')
-  const [volume, setVolume] = useState('&order=volume_desc&')
+  const [filter, setFilter] = useState('')
   const [loaded, setLoaded] = useState(false)
   const [pages, setPages] = useState([-1, 0, 1, 2, 3])
 
@@ -29,9 +23,10 @@ const Crypto = (props) => {
   useEffect(() => {
 
     try {
-      axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}${marketCap}${volume}per_page=20&page=${pages[2]}&sparkline=false`)
+      axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&${filter}&per_page=20&page=${pages[2]}&sparkline=false`)
         .then(resp => {
           setCrypto(resp.data)
+          scrollToTop()
           setLoaded(true)
         })
 
@@ -40,7 +35,7 @@ const Crypto = (props) => {
       console.log(e)
     }
 
-  }, [currency, marketCap, volume, pages])
+  }, [currency, filter, pages])
 
   function handleCurrency(event) {
     setLoaded(false)
@@ -48,15 +43,14 @@ const Crypto = (props) => {
   }
   function handleMarketCap(event) {
     setLoaded(false)
-    setVolume('')
-    setMarketCap(event.target.value)
+    setFilter(event.target.value)
   }
   function handleVolume(event) {
     setLoaded(false)
-    setMarketCap('')
-    setVolume(event.target.value)
+    setFilter(event.target.value)
   }
   function handlePage(event) {
+    setLoaded(false)
     const newPages = [...pages]
     newPages[0] = Number(event.target.value) - 2
     newPages[1] = Number(event.target.value) - 1
@@ -69,6 +63,45 @@ const Crypto = (props) => {
   function scrollToTop() {
     window.scrollTo(0, 0)
   }
+  function numberWithCommas(x) {
+    if (!x) return '0'
+
+    else {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    }
+  }
+
+
+  function formatNumber(value) {
+    if (value >= 1000000) {
+      value = (value / 1000000) + 'M'
+    } else if (value >= 1000) {
+      value = (value / 1000) + 'K'
+    }
+    return value
+  }
+
+
+  function abbreviateNumber(value) {
+    var newValue = value
+    if (value >= 1000) {
+      var suffixes = ['', 'K', 'M', 'B', 'T']
+      var suffixNum = Math.floor(('' + value).length / 3)
+      var shortValue = ''
+      for (var precision = 2; precision >= 1; precision--) {
+        shortValue = parseFloat((suffixNum != 0 ? (value / Math.pow(1000, suffixNum)) : value).toPrecision(precision))
+        var dotLessShortValue = (shortValue + '').replace(/[^a-zA-Z 0-9]+/g, '')
+        if (dotLessShortValue.length <= 2) {
+          break
+        }
+      }
+      if (shortValue % 1 !== 0) shortValue = shortValue.toFixed(1)
+      newValue = shortValue + suffixes[suffixNum]
+    }
+    return newValue
+  }
+
+
 
 
 
@@ -85,15 +118,15 @@ const Crypto = (props) => {
       <select onChange={handleMarketCap} className="filter-currency">
         <option defaultValue hidden>Market cap</option>
         <option disabled>Market cap</option>
-        <option value="&order=market_cap_desc&">Descending</option>
-        <option value="&order=market_cap_asc&">Ascending</option>
+        <option value="order=market_cap_desc">Descending</option>
+        <option value="order=market_cap_asc">Ascending</option>
       </select>
 
       <select onChange={handleVolume} className="filter-currency">
-        <option defaultValue hidden>Volume</option>
-        <option disabled>Volume</option>
-        <option value="&order=volume_desc&">Descending</option>
-        <option value="&order=volume_asc&">Ascending</option>
+        <option defaultValue hidden>Total volume</option>
+        <option disabled>Total volume</option>
+        <option value="order=volume_desc">Descending</option>
+        <option value="order=volume_asc">Ascending</option>
       </select>
 
     </div>
@@ -102,6 +135,27 @@ const Crypto = (props) => {
 
       <div className="container-coins" id="scroll-to-top">
         <Fade>
+
+          <div className="stat-headings">
+
+            <div className="stats-spacer"></div>
+
+
+            <div className="stats-wrapper">
+              <div className="stat-volume">
+                <p className="stat-title" >T/V</p>
+              </div>
+              <div className="stat-mc">
+                <p className="stat-title" >M/C</p>
+              </div>
+              <div className="stat-change">
+                <p className="stat-title" >Change</p>
+              </div>
+              <div className="stat-price">
+                <p className="stat-title" >Price</p>
+              </div>
+            </div>
+          </div>
 
           {crypto.map((coin, index) => {
 
@@ -114,8 +168,34 @@ const Crypto = (props) => {
                 </div>
 
                 <div className="coin-market">
-                  <p className="coin-price">{currencySymbols[currency]}{Math.round((coin.current_price + Number.EPSILON) * 100) / 100}</p>
-                  <p className={crypto[index].price_change_percentage_24h > 0 ? 'coin-change' : 'coin-change-red'}>{coin.price_change_percentage_24h}%</p>
+
+                  <div className="res-volume">
+                    <p>{currencySymbols[currency]}{abbreviateNumber(coin.total_volume)}</p>
+                  </div>
+
+                  <div className="res-mc">
+                    <p>{currencySymbols[currency]}{abbreviateNumber(coin.market_cap)}</p>
+                  </div>
+
+                  <div className="res-change">
+                    <p className={crypto[index].price_change_percentage_24h > 0 ? 'coin-change' : 'coin-change-red'}>{coin.price_change_percentage_24h}%</p>
+
+                  </div>
+
+                  <div className="res-price">
+                    <p className="coin-price">{currencySymbols[currency]}{Math.round((coin.current_price + Number.EPSILON) * 100) / 100}</p>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
 
                 </div>
               </div>
@@ -135,14 +215,17 @@ const Crypto = (props) => {
           </div>
         </Fade>
 
-      </div>}
+      </div>
+    }
+
+    <div className="spacer"></div>
 
 
 
 
 
 
-  </div>
+  </div >
 
 
 

@@ -15,11 +15,6 @@ const Account = (props) => {
   const [watchlist, setWatchlist] = useState([])
   const [loaded, setLoaded] = useState(false)
 
-  const currencySymbols = {
-    GBP: '£',
-    EUR: '€',
-    USD: '$'
-  }
 
   useEffect(() => {
     axios.get(`/api/users/${userId}`)
@@ -90,10 +85,22 @@ const Account = (props) => {
                   </div>
 
                   <div className="coin-market">
-                    <p className="coin-price">${Math.round((coin.market_data.current_price.usd + Number.EPSILON) * 100) / 100}</p>
-                    <p className={coin.market_data.price_change_percentage_24h > 0 ? 'coin-change' : 'coin-change-red'}>{coin.market_data.price_change_percentage_24h}%</p>
+
+                    <div className="res-change-account">
+                      <p className={coin.market_data.price_change_percentage_24h > 0 ? 'coin-change' : 'coin-change-red'}>{coin.market_data.price_change_percentage_24h}%</p>
+                    </div>
+
+                    <div className="res-price-account">
+                      <p className="coin-price">${Math.round((coin.market_data.current_price.usd + Number.EPSILON) * 100) / 100}</p>
+                    </div>
+
 
                   </div>
+
+
+
+
+
                 </div>
               </Link>
             })}
@@ -102,9 +109,10 @@ const Account = (props) => {
           </div>
 
         </Fade>
-      </div>
-    }
 
+      </div>}
+
+    <div className="spacer"></div>
 
 
   </div >

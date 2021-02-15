@@ -154,7 +154,7 @@ const Coin = (props) => {
 
       </div>}
 
-
+    <div className="spacer"></div>
 
   </div >
 

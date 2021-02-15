@@ -169,10 +169,11 @@ const UpdateAccount = (props) => {
 
         <button className="btn btn-secondary btn-md btn-custom">Update</button>
 
+        <button onClick={handleDelete} className="btn btn-secondary btn-md btn-custom delete-user btn-dup">Close account</button>
+
       </form>
 
-      <button onClick={handleDelete} className="btn btn-secondary btn-md btn-custom delete-user btn-dup">Close account</button>
-
+      <div className="spacer"></div>
 
 
     </Fade>
