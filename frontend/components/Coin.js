@@ -12,7 +12,6 @@ import { faCoins } from '@fortawesome/free-solid-svg-icons'
 const Coin = (props) => {
 
   const token = localStorage.getItem('token')
-  const logo = <FontAwesomeIcon icon={faCoins} size="2x" />
   const [coin, setCoin] = useState({})
   const [loaded, setLoaded] = useState(false)
   const [accountData, setAccountData] = useState({})
@@ -81,7 +80,7 @@ const Coin = (props) => {
 
 
 
-  return <div className="container-global crypto-desk">
+  return <div className="container-global-coin crypto-desk">
 
 
     {!loaded ? <div className="loader"><ReactBootStrap.Spinner className="spinner" animation="grow" /></div> :
@@ -102,25 +101,50 @@ const Coin = (props) => {
 
         <div className="coin-mid">
 
-          <div className="coin-perc">
-            <p className="coin-perc-type" >24h</p>
-            <p className={coin.market_data.price_change_percentage_24h > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.market_data.price_change_percentage_24h + Number.EPSILON) * 100) / 100}%</p>
+          <div className="coin-stats" >
+
+            <div className="coin-perc">
+              <p className="coin-perc-type" >24h</p>
+              <p className={coin.market_data.price_change_percentage_24h > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.market_data.price_change_percentage_24h + Number.EPSILON) * 100) / 100}%</p>
+            </div>
+
+            <div className="coin-perc">
+              <p className="coin-perc-type" >30d</p>
+              <p className={coin.market_data.price_change_percentage_30d > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.market_data.price_change_percentage_30d + Number.EPSILON) * 100) / 100}%</p>
+            </div>
+
+            <div className="coin-perc">
+              <p className="coin-perc-type" >1y</p>
+              <p className={coin.market_data.price_change_percentage_1y > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.market_data.price_change_percentage_1y + Number.EPSILON) * 100) / 100}%</p>
+            </div>
+
           </div>
 
-          <div className="coin-perc">
-            <p className="coin-perc-type" >30d</p>
-            <p className={coin.market_data.price_change_percentage_30d > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.market_data.price_change_percentage_30d + Number.EPSILON) * 100) / 100}%</p>
+
+
+          <div className="coin-stats" >
+
+            <div className="coin-perc">
+              <p className="coin-perc-type" >Market cap<br />24H</p>
+              <p className={coin.market_data.market_cap_change_percentage_24h > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.market_data.market_cap_change_percentage_24h + Number.EPSILON) * 100) / 100}%</p>
+            </div>
+
+            <div className="coin-perc">
+              <p className="coin-perc-type" >Developer<br />score</p>
+              <p className={coin.developer_score > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.developer_score + Number.EPSILON) * 100) / 100}</p>
+            </div>
+
+            <div className="coin-perc">
+              <p className="coin-perc-type" >Liquidity<br />score</p>
+              <p className={coin.liquidity_score > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.liquidity_score + Number.EPSILON) * 100) / 100}</p>
+            </div>
           </div>
 
-          <div className="coin-perc">
-            <p className="coin-perc-type" >1y</p>
-            <p className={coin.market_data.price_change_percentage_1y > 0 ? 'coin-perc-green' : 'coin-perc-red'}>{Math.round((coin.market_data.price_change_percentage_1y + Number.EPSILON) * 100) / 100}%</p>
-          </div>
 
         </div>
 
         <div className="coin-lower">
-          <p className="coin-desc" >{coin.description.en}</p>
+          <div className="coin-desc" dangerouslySetInnerHTML={{ __html: coin.description.en }} />
         </div>
 
         <div>

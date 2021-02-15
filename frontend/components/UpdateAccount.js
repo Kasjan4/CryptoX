@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
+
 
 
 const UpdateAccount = (props) => {
@@ -85,7 +85,7 @@ const UpdateAccount = (props) => {
   }
 
 
-  return <div className="container-global">
+  return <div className="container-update-account">
     <Fade>
 
       <form className="update-desk" onSubmit={handleUpdate}>
@@ -159,13 +159,13 @@ const UpdateAccount = (props) => {
         </div>
 
         {errors.message &&
-          <Slide up appear spy={errors}>
+          <Fade appear spy={errors}>
             <div className="error-container">
               <p id="error" >
                 {errors.message}
               </p>
             </div>
-          </Slide>}
+          </Fade>}
 
         <button className="btn btn-secondary btn-md btn-custom">Update</button>
 

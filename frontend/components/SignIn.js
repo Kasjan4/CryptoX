@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -96,13 +95,13 @@ const SignIn = (props) => {
 
 
         {errors.message &&
-          <Slide up appear spy={errors}>
+          <Fade appear spy={errors}>
             <div className="error-container">
               <p id="error" >
                 {errors.message}
               </p>
             </div>
-          </Slide>}
+          </Fade>}
 
         <button className="btn btn-secondary btn-md btn-custom">Sign In</button>
 

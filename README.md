@@ -13,8 +13,11 @@ A crypto tracker built with React, Node, Express, MongoDB. Track your favourite 
 - HTML5
 - CSS3
 - JavaScript ES6
-- React Hooks, Router
+- React Hooks
+- React Router
 - React Reveal
+- Bootstrap framework
+- Particles js
 - Express
 - Mongoose
 - MongoDB

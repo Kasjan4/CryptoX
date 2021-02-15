@@ -30,12 +30,33 @@ body {
   overflow-y: hidden;
 }
 
+.container-global-coin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  width: 100vw;
+  overflow-x: hidden;
+
+}
+
 .container-crypto {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   width: 100vw;
+  color: rgb(61, 61, 61);
+  background-color: transparent;
+}
+
+.container-update-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  /* height: 100vh; */
   color: rgb(61, 61, 61);
   background-color: transparent;
 }
@@ -61,6 +82,7 @@ canvas {
 .loader {
   display: flex;
   position: fixed;
+  top: 0;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -223,6 +245,7 @@ form {
   padding: 2.5rem 0 2.5rem 0;
   width: 100vw;
   border-radius: 1rem;
+  transition: .5s ease;
 }
 
 input {
@@ -332,7 +355,8 @@ input::placeholder {
 
 .delete-user {
   background-color: rgb(238, 53, 53);
-  margin-top: 5rem;
+  position: absolute;
+  bottom: 3rem;
 }
 
 .delete-user:hover {
@@ -358,9 +382,12 @@ input::placeholder {
 
 
 
-/* SIGNIN */
+/* UPDATE */
 
-
+.update-desk {
+  position: absolute;
+  top: 15vh;
+}
 
 
 
@@ -370,18 +397,20 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
   width: 100vw;
-  height: 20vw;
-  background-color: red;
+  background-color: rgb(255, 0, 0, 0.7);
   text-align: center;
-  border-radius: 1rem 1rem 0 0;
 }
 
 #error {
+  font-weight: 300;
   font-size: 1.2rem;
+  line-height: 1.5;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
   color: white;
+
 }
 
 
@@ -393,15 +422,16 @@ input::placeholder {
 }
 
 .user-info {
+  position: absolute;
+  top: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
   width: 100vw;
   background-color: rgb(255, 255, 255, 0.9);
-  border-radius: 0;
+  border-radius: 1rem;
   padding: 2.5rem 0 2.5rem 0;
-  margin-top: 5rem;
 }
 
 .account-panel {
@@ -592,6 +622,8 @@ input::placeholder {
 /* COIN */
 
 .coin {
+  position: absolute;
+  top: 15vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -599,6 +631,13 @@ input::placeholder {
   padding: 2.5rem 0 2.5rem 0;
   width: 100vw;
   border-radius: 1rem;
+}
+
+.coin-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
 }
 
 .coin-upper {
@@ -646,13 +685,16 @@ input::placeholder {
 
 .coin-mid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid #1652f0;
+  width: 100vw;
+  background-color: rgb(255, 255, 255, 0.2);
 }
+
 
 .coin-perc {
   display: flex;
@@ -671,6 +713,7 @@ input::placeholder {
   color: rgb(61, 61, 61);
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .coin-perc-green {
@@ -787,7 +830,6 @@ input::placeholder {
   .coin-mid {
     margin-bottom: 1rem;
     width: 60vw;
-    height: 10vh;
   }
 
   .coin-lower {
@@ -870,13 +912,10 @@ input::placeholder {
 
   .error-container {
     width: 30vw;
-    height: 8vh;
   }
 
   #error {
     font-size: 1.2rem;
-    font-weight: 300;
-    color: white;
   }
 
   .account-panel {
@@ -901,6 +940,13 @@ input::placeholder {
   .coin-image {
     max-width: 8vw;
 
+  }
+
+  .coin-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60vw;
   }
 
 
