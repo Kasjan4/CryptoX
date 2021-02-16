@@ -166,15 +166,6 @@ const Crypto = () => {
 
 
 
-
-
-
-
-
-
-
-
-
                 </div>
               </div>
             </Link>
