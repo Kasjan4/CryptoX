@@ -5,9 +5,9 @@ const uniqueValidator = require('mongoose-unique-validator')
 
 
 const schema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
+  username: { type: String, required: true, unique: true, maxlength: 8, uniqueCaseInsensitive: true },
   email: { type: String, required: true, unique: true, uniqueCaseInsensitive: false },
-  password: { type: String, required: true },
+  password: { type: String, required: true, minlength: 6 },
   image: { type: String, required: true },
   isAdmin: { type: Boolean },
   watchlist: { type: Array }

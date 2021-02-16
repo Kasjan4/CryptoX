@@ -2,7 +2,7 @@
 
 ## Overview
 
-A crypto tracker built with React, Node, Express, MongoDB. Track your favourite crypto by making an account. Mobile responsive.
+A crypto tracker built with React, Node, Express and MongoDB. Track your favourite crypto by making an account. Mobile responsive.
 
 [CHECK IT OUT HERE](https://cryptox-project.herokuapp.com/)
 

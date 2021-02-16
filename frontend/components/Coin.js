@@ -131,8 +131,8 @@ const Coin = (props) => {
             <div className="coin-desc" dangerouslySetInnerHTML={{ __html: coin.description.en }} />
           </div>
 
-          <div>
-            <button onClick={handleWatch} className={duplicate ? 'btn btn-secondary btn-md btn-custom btn-dup' : 'btn btn-secondary btn-md btn-custom'} >{duplicate ? 'Unwatch' : 'Watch'}</button>
+          <div className="coin-end" >
+            <button onClick={handleWatch} className={duplicate ? 'btn btn-secondary btn-md btn-custom btn-dup' : 'btn btn-secondary btn-md btn-custom btn-nodup'} >{duplicate ? 'Unwatch' : 'Watch'}</button>
           </div>
 
         </Fade>

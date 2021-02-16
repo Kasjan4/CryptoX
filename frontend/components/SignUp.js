@@ -37,16 +37,9 @@ const SignUp = (props) => {
     axios.post('/api/signup', formData)
       .then(resp => {
 
-        if (resp.data.errors) {
+        if (resp.data.message) {
 
-          const errorType = resp.data.errors[Object.keys(resp.data.errors)[0]].message
-
-          const newErrors = {
-            ...errors,
-            message: errorType
-          }
-
-          updateErrors(newErrors)
+          updateErrors(resp.data)
         } else {
           props.history.push('/')
         }

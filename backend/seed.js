@@ -20,8 +20,8 @@ mongoose.connect(
           {
             username: 'Admin',
             email: 'admin@admin.com',
-            password: 'admin',
-            passwordConfirmation: 'admin',
+            password: 'adminn',
+            passwordConfirmation: 'adminn',
             image: 'https://i.imgur.com/uQyt00P.jpg',
             isAdmin: true,
             watchlist: []

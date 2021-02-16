@@ -15,6 +15,10 @@ function getUsers(req, res) {
 function createUser(req, res) {
   const body = req.body
 
+  if (body.username.length > 8) return res.send({ message: 'Username must be up to 8 characters in length' })
+  if (body.password.length < 6) return res.send({ message: 'Password must be at least 6 characters in length' })
+  if (body.password !== body.passwordConfirmation) return res.send({ message: 'Passwords do not match' })
+
   User
     .create(body)
     .then(user => {
@@ -69,12 +73,11 @@ function modifyUser(req, res) {
     .findById(accountId)
     .then(account => {
       if (!account) return res.send({ message: 'User not found' })
-      if (!account._id.equals(currentUser._id)) {
-        return res.status(401).send({ message: 'Unauthorised' })
-      }
-      if (body.password !== body.passwordConfirmation) {
-        return res.send({ message: 'Passwords do not match' })
-      }
+      if (!account._id.equals(currentUser._id)) return res.status(401).send({ message: 'Unauthorised' })
+      if (body.password !== body.passwordConfirmation) return res.send({ message: 'Passwords do not match' })
+      if (body.username.length > 8) return res.send({ message: 'Username must be up to 8 characters in length' })
+      if (body.password.length < 6) return res.send({ message: 'Password must be at least 6 characters in length' })
+
       account.set(body)
 
       res.send(account)
@@ -90,17 +93,8 @@ function logInUser(req, res) {
     .findOne({ email: req.body.email })
     .then(user => {
 
-      if (!user) {
-        res.send({ message: 'User not found' })
-
-        return
-      }
-
-      if (!user.validatePassword(req.body.password)) {
-        res.send({ message: 'Incorrect password' })
-
-        return
-      }
+      if (!user) return res.send({ message: 'User not found' })
+      if (!user.validatePassword(req.body.password)) return res.send({ message: 'Incorrect password' })
 
       const token = jwt.sign(
         { sub: user._id },

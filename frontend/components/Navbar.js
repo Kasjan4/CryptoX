@@ -5,6 +5,7 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoins } from '@fortawesome/free-solid-svg-icons'
 import $ from 'jquery'
+import Fade from 'react-reveal/Fade'
 
 
 const Navbar = (props) => {
@@ -46,10 +47,12 @@ const Navbar = (props) => {
 
     <div className="nav-logo">{logo} CryptoX</div>
 
-    {marketStatus && <div className="market-status-container">
-      <p className="market-status" >Market is {upDown} <span className={marketStatus >= 0 ? 'market-status-green' : 'market-status-red'}>{marketStatus}%</span></p>
-    </div>
-    }
+    <Fade appear spy={marketStatus}>
+      {marketStatus && <div className="market-status-container">
+        <p className="market-status" >Market is {upDown} <span className={marketStatus >= 0 ? 'market-status-green' : 'market-status-red'}>{marketStatus}%</span></p>
+      </div>
+      }
+    </Fade>
 
     <button className="navbar-toggler custom-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span className="navbar-toggler-icon"></span>

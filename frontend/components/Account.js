@@ -68,7 +68,7 @@ const Account = (props) => {
             {watchlist.map((coin, index) => {
 
               return <Link to={`/crypto/${coin.id}`} key={index}>
-                <div className="coin-single coin-single-desk" >
+                <div className={index % 2 === 0 ? 'coin-single coin-single-desk coin-single-account' : 'coin-single coin-single-desk coin-single-account coin-variable-bg'} >
 
                   <div className="coin-info">
                     <img className="coin-image" src={coin.image.large} />
