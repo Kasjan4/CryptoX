@@ -62,10 +62,16 @@
     "react-app-polyfill": "^2.0.0",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",
-    "react-particles-js": "^3.4.1",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "regenerator-runtime": "^0.13.7",
-    "server": "^1.0.31"
+    "server": "^1.0.31",
+    "react-typed": "^1.2.0",
+    "react-responsive-carousel": "^3.2.12",
+    "react-particles-js": "^3.4.1",
+    "emailjs-com": "^2.6.4",
+
+
+
   }
 }

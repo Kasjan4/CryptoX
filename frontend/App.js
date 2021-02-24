@@ -10,7 +10,7 @@ import Crypto from './components/Crypto'
 import Coin from './components/Coin'
 import Account from './components/Account'
 import UpdateAccount from './components/UpdateAccount'
-import Particles from 'react-particles-js'
+
 
 
 const App = () => (
